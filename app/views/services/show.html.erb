@@ -6,7 +6,7 @@
   <%= @service.available %> <br>
   <%= @service.user.id %> <br>
 
-  <%= link_to "edit", edit_service_path(:id) %>
+  <%= link_to "edit", edit_service_path(params[:id]) %>
   <%= link_to 'delete',
     { controller: "services", action: "destroy", id: @service.id },
     data: { confirm: 'Are you sure?' },

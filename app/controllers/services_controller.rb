@@ -1,11 +1,11 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
+
   def index
-    @service = Service.all
+    @services = policy_scope(Service)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @service = Service.new
@@ -24,16 +24,16 @@ class ServicesController < ApplicationController
     end
   end
 
+  def edit; end
+
   def update
     if @service.update(service_params)
-      redirect_to @service, notice: 'Successfully updated.'
+      redirect_to service_path(@service), notice: 'Successfully updated.'
     else
       render :edit
     end
   end
 
-  def edit
-  end
 
   def destroy
     @service.destroy
@@ -49,7 +49,7 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:description, :price, :available, :user_id)
+    params.require(:service).permit(:description, :price, :available)
 
   end
 

@@ -1,2 +1,10 @@
-<h1>Services#edit</h1>
-<p>Find me in app/views/services/edit.html.erb</p>
+<div class="container mt-3">
+  <h1>Services edit</h1>
+  <% if params[:action] == "edit" %>
+    <h1>Editing: <%= @service.id %> </h1>
+  <% end %>
+  <%= simple_form_for @service do |f| %>
+    <%= f.input :description, placeholder: @service.description %>
+    <%= f.input :price, placeholder: @service.price %>
+  <% end %>
+</div>
