@@ -5,10 +5,8 @@
   <%= @service.price  %> <br>
   <%= @service.available %> <br>
   <%= @service.user.id %> <br>
-
-  <%= link_to "edit", edit_service_path(params[:id]) %>
-  <%= link_to 'delete',
-    { controller: "services", action: "destroy", id: @service.id },
-    data: { confirm: 'Are you sure?' },
-    method: :delete %>
+  <% if current_user == @service.user %>
+    <%= link_to "Edit", edit_service_path(params[:id]) %>
+    <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
 </div>
