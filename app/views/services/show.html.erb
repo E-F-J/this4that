@@ -8,5 +8,7 @@
   <% if current_user == @service.user %>
     <%= link_to "Edit", edit_service_path(params[:id]) %>
     <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+  <% else %>
+    <%= link_to "Book this service", new_service_request_path(@service.id) %>
+  <% end %>
 </div>

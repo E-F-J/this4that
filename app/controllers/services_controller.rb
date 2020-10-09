@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :find_service, only: [:show, :edit, :update, :destroy]
 
   def index
     @services = policy_scope(Service).order(created_at: :desc)
@@ -43,14 +43,13 @@ class ServicesController < ApplicationController
 
   private
 
-  def set_service
+  def find_service
     @service = Service.find(params[:id])
     authorize @service
   end
 
   def service_params
     params.require(:service).permit(:description, :price, :available)
-
   end
 
 end

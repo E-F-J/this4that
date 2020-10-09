@@ -4,7 +4,11 @@ class RequestPolicy < ApplicationPolicy
       scope.all
     end
 
-    def new?
+    def create?
+      true
+    end
+
+    def index?
       true
     end
 
