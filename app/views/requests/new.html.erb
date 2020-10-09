@@ -1,0 +1,7 @@
+<div class="container mt-3">
+  <h1>Book <%= @service.description %></h1>
+  <%= simple_form_for [@service, @request] do |f| %>
+    <%= f.input :message, label: 'Please tell the service owner anything they need to know' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
