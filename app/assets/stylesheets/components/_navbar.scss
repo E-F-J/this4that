@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $navbar-gray;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,40 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+
+.nav-link-search {
+  background-color: white;
+  color: $light-gray;
+  padding: 5px 20px;
+  border-radius: 3px;
+}
+
+.nav-link-search-btn {
+  background-color: $purple;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 3px;
+}
+
+@media screen and (min-width: 640px){
+    .flex-container {
+        display: flex;
+    }
+
+    .navbar-brand {
+      flex-grow: 1;
+    }
+
+    .nav-link-search {
+      flex-grow: 3;
+      margin-right: 16px;
+    }
+
+    .nav-link-search-btn {
+      flex-grow: 1;
+      margin-right: 16px;
+
+    }
 }
