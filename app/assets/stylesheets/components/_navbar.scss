@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $navbar-gray;
+  background-image: url(/assets/navbar_background.png);
+  height: 115px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,20 +9,20 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
 }
 
 
 .nav-link-search {
   background-color: white;
-  color: $light-gray;
+  color: $gray;
   padding: 5px 20px;
   border-radius: 3px;
   border: none;
 }
 
 .nav-link-search-btn {
-  background-color: $purple;
+  background-color: $buttons-purple;
   color: white;
   padding: 5px 20px;
   border-radius: 3px;
@@ -30,7 +31,7 @@
 
 @media screen and (min-width: 640px){
     .flex-container {
-        display: flex;
+      display: flex;
     }
 
     .navbar-brand {
