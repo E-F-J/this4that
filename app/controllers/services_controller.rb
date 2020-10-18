@@ -3,6 +3,17 @@ class ServicesController < ApplicationController
 
   def index
     @services = policy_scope(Service).order(created_at: :desc)
+    if params[:query].present?
+      @services = Service.search_by_title_and_description(params[:query])
+    elsif params.has_key?(:created_at)
+      if params[:created_at] == "most_recent"
+        @services = Service.order("services.created_at DESC")
+      else
+        @services = Service.order("services.created_at ASC")
+      end
+    else
+      @services = Service.all
+    end
   end
 
   def show; end
