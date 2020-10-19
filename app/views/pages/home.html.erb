@@ -16,7 +16,20 @@
   </div>
 
 
-  <%= link_to "Create a service", new_service_path %>
+
+  <% @services.each do |service|%>
+  <tr>
+    <td> <%= service.user.email %></td>
+    <br>
+    <td><%= link_to service.description, service_path(service.id) %></td>
+    <br>
+  </tr>
+    <br>
+  <% end %>
+  <br>
+  <% if policy(Service).new? %>
+    <%= link_to "Create a service", new_service_path %>
+  <% end %>
   <br>
   <%= link_to "look for anything", services_path %>
   <br>
