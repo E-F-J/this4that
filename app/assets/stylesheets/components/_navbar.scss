@@ -1,16 +1,18 @@
-.navbar-lewagon {
+.navbar-purple {
   justify-content: space-between;
   background-image: asset_url('navbar_background.png');
+  background-size: cover;
+
   height: 115px;
   padding-bottom: 28px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-purple .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 120px;
+.navbar-purple .navbar-brand img {
+  width: 100px;
 }
 
 
@@ -41,12 +43,16 @@
 
     .nav-link-search {
       flex-grow: 3;
-      margin-right: 16px;
+      margin: 0 16px;
     }
 
     .nav-link-search-btn {
       flex-grow: 1;
-      margin-right: 16px;
+      margin: 0 16px;
 
+    }
+
+    .nav-item .nav-link {
+      color: white;
     }
 }
