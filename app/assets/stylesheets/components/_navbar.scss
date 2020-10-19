@@ -1,8 +1,10 @@
 .navbar-purple {
   justify-content: space-between;
-  background-image: url(/assets/navbar_background.png);
+  background-image: asset_url('navbar_background.png');
   background-size: cover;
+
   height: 115px;
+  padding-bottom: 28px;
 }
 
 .navbar-purple .navbar-collapse {
@@ -10,7 +12,7 @@
 }
 
 .navbar-purple .navbar-brand img {
-  width: 90px;
+  width: 100px;
 }
 
 
