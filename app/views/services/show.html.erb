@@ -2,12 +2,12 @@
   <h1>Services show</h1>
 
   <%= @service.description  %> <br>
-  <%= @service.price  %> <br>
-  <%= @service.available %> <br>
-  <%= @service.user.id %> <br>
-  <% if current_user == @service.user %>
-    <%= link_to "Edit", edit_service_path(params[:id]) %>
-    <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= @service.price %> <br>
+  <% if policy(@service).edit? %>
+    <td><%= link_to "Edit", edit_service_path(@service) %></td>
+  <% end %>
+  <% if policy(@service).destroy? %>
+    <td><%= link_to "Destroy",  @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% else %>
     <%= link_to "Book this service", new_service_request_path(@service.id) %>
   <% end %>

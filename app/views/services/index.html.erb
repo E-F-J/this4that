@@ -4,14 +4,8 @@
   <tr>
     <td> <%= service.user_id %></td>
     <br>
-    <td><%= link_to service.description, service_path(service.id) %></td>
+    <td><%= link_to service.title, service_path(service.id) %></td>
     <br>
-    <% if policy(service).edit? %>
-      <td><%= link_to "Edit", edit_service_path(service) %></td>
-    <% end %>
-    <% if policy(service).destroy? %>
-      <td><%= link_to "Destroy",  service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
   </tr>
     <br>
   <% end %>
